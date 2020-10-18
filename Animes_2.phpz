@@ -1,0 +1,210 @@
+<?php
+
+function limpia($var){
+	$var = strip_tags($var);
+	$malo = array("\\",";","\'","'",'"','\"');
+	$i=0;$o=count($malo);
+	while($i<=$o){
+		$var = str_replace($malo[$i],"",$var);
+		$i++;
+	}
+	return $var;
+}
+
+function LimpiarTodo($datos){
+	if(is_array($datos)){
+		$datos = array_map('limpia',$datos);
+	}else{
+		die("<font color=#ff0000><b>Error:</b></font> La funcion <b>LimpiarTodo</b> debe contener un arreglo.");
+	}
+	return $datos;	
+}
+
+### Seguridad ###
+if($_POST){
+	$_POST =& LimpiarTodo($_POST);
+}
+if($_GET){
+	$_GET =& LimpiarTodo($_GET);
+}
+### Seguridad  ###
+//
+@require_once"Procesos/Configurar.php";
+@require_once"Procesos/Core_Funciones.php";
+
+$anime = episodio_v($_GET['id']);
+$animeX = $anime;
+$animex=$anime;
+foreach ($animex as $anime){}
+if($anime['CAPITULO'] == 'no'){
+redireccionar();
+}
+//
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title><?php echo $titulo; ?> <?=$anime['nom']?> <?=$anime['nom_capitulo']?> Sub español Online | Todos los capitulos de <?=$anime['nom']?></title>
+<meta name="description" content="La mejor web para ver Anime Online <?=$anime['nom_capitulo']?> - <?=$anime['nom']?> Gratis, mira los utimos capitulos de los animes del momento sin ninguna clase de restriccion | Anime para ver Online y descargar | Naruto Shippuden | Bleach | Dragon Ball Kai | Tokyo Magnitude 8.0 | Onepiece y mas."> 
+<meta name="keywords" content="<?=$anime['nom_capitulo']?>, anime online español <?=$anime['nom_capitulo']?>, <?=$anime['nom']?>, anime online gratis <?=$anime['nom']?>, anime online naruto, anime online naruto shippuden, anime online sub espa?l, anime online free, anime online latino, anime online bleach, animeid, anime id, animes, anime, ecchi, anime online, Naruto Shippuden, Anime online, Anime en Descarga Directa, Ver Anime Online.">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name='robots' content='index, follow'> 
+<meta name='googlebot' content='index, follow'>
+<meta name='author' content='<?php echo $sitio; ?>'> 
+<meta name='copyright' content='<?php echo $sitio; ?> <?=date("Y")?> '> 
+<meta name='revisit' content='1 days' /> 
+<meta http-equiv="Content-Language" content="es">
+<base href="http://Animevision.org/">
+<link href="Estilo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="Js/jquery-1.js"></script>
+<script type="text/javascript" src="http://www.Animevision.org/js/jquery-1.4.2.min.js"></script> 
+<script type="text/javascript" src="http://www.Animevision.org/js/jquery.tipsy.js"></script> 
+<script type="text/javascript" src="http://www.Animevision.org/js/jquery.jtruncate.pack.js"></script> 
+<script type="text/javascript" src="http://www.Animevision.org/js/script.js"></script> 
+<script type="text/javascript" src="http://www.Animevision.org/js/swfobject.js"></script> 
+<script type="text/javascript"> 
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('0(p).o(4(){0(".b").5();0(".c").5();0("1.d 2:6").7("3").8();0("1.e 2:6").7("3").8();0(".b:6").8();0(".c:6").8();0("1.d 2").f(4(){0("1.d 2").h("3");0(9).7("3");0(".b").5();g a=0(9).i("a").j("k");0(a).l();m n});0("1.e 2").f(4(){0("1.e 2").h("3");0(9).7("3");0(".c").5();g a=0(9).i("a").j("k");0(a).l();m n});0("#q").f(4(){0(".r").s(\'t\',\'u\')})});',31,31,'jQuery|ul|li|active|function|hide|first|addClass|show|this||tab_content|subtab_content|tabs|subtabs|click|var|removeClass|find|attr|href|fadeIn|return|false|ready|document|clad|adspl|css|display|none'.split('|'),0,{}))</script> 
+</head>
+<body>
+<div id="container">
+<!-- INICIO HEADER -->
+<div id="supe">Todos los capitulos de <?=$anime['nom']?> <?=$anime['nom_capitulo']?> Online | <?php echo $titulo; ?></div> 
+<div id="l" class="c"> 
+<a href="/" title="Anime Online" style="float: left;"> 
+<img src="http://i574.photobucket.com/albums/ss183/kotiger09/videosanime-1.png" alt="Anime Online" name="logo" width="990" height="100" border="0" id="logo"></a> 
+</div> 
+<div class="menu-nav" style="height: 50px"><div class="index-nav"><ul> 
+<li><a href="/">Inicio</a></li> 
+<li><a href="http://Animevision.org/chat.php" target="_blank" >Chat</a></li> 
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+</ul>
+<!-- INICIO BUSCADOR --> 
+<div style="margin-top:12px">
+<form class="msn" method="get" action="buscador.php"> 
+<input type="text" name="q" value="" id="text">
+<input type="submit" value="Buscar" id="btnBuscar"> 
+</form>
+</div>
+<!-- FIN BUSCADOR -->
+</div></div> 
+<!-- FINAL HEADER -->
+<div id="pub-contenedor"> 
+<div id="pub-1"><div class="publicidad">
+&nbsp;</div></div>
+<div id="pub-2"><div class="publicidad"> 
+&nbsp;</div></div>
+<div id="pub-3"><div class="publicidad"> 
+&nbsp;</div></div>
+</div> 
+<div id="main">
+<!-- INICIO ABECEDARIO --> 
+<div align="center"> 
+<div class="paginacion"> 
+<span class="pag"> 
+<a href="letra/1.html">#</a>
+<a href="letra/a.html">A</a>
+<a href="letra/b.html">B</a>
+<a href="letra/c.html">C</a>
+<a href="letra/d.html">D</a>
+<a href="letra/e.html">E</a>
+<a href="letra/f.html">F</a>
+<a href="letra/g.html">G</a>
+<a href="letra/h.html">H</a>
+<a href="letra/i.html">I</a>
+<a href="letra/j.html">J</a>
+<a href="letra/k.html">K</a>
+<a href="letra/l.html">L</a>
+<a href="letra/m.html">M</a>
+<a href="letra/n.html">N</a>
+<a href="letra/o.html">O</a>
+<a href="letra/p.html">P</a>
+<a href="letra/q.html">Q</a>
+<a href="letra/r.html">R</a>
+<a href="letra/s.html">S</a>
+<a href="letra/t.html">T</a>
+<a href="letra/u.html">U</a>
+<a href="letra/v.html">V</a>
+<a href="letra/w.html">W</a>
+<a href="letra/x.html">X</a>
+<a href="letra/y.html">Y</a>
+<a href="letra/z.html">Z</a>
+</span></div></div>
+<!-- FIN ABECEDARIO --> 
+<center><table border="0" width="990" cellspacing="0" cellpadding="0"><tr>
+<!-- INICIO CUERPO --> 
+<td width="770" valign="top">
+<div id="column6"> 
+<div class="capitulo-titulo"><?=ucwords($anime['nom_capitulo'])?> - <?=$anime['nom']?></div> 
+<div class="clear"></div> 
+<!--------- videos ------------> 
+<div class="elcontainer"> 
+	<ul class="tabs"> 
+	<li><a href="#tab1">Opción 1</a></li>
+<?php
+if($anime['embed']=='no'){
+echo "
+
+";
+}else{
+echo $anime['embed'];
+}
+?>
+</div> 
+<!---------  fin video ------------> 
+<div class="clear"></div>
+<p></p>
+<!-- AddThis Button BEGIN -->
+<p></p>
+<p></p>
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dbda7351deb66ec"></script>
+<!-- AddThis Button END -->
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=218883668143466&amp;xfbml=1"></script><fb:like href="http://animevision.org/<?=$anime['nom_capitulo']?>" send="false" layout="box_count" width="300" show_faces="true" font="verdana"></fb:like>
+<div class="clear"></div>
+<div class="comentario-titulo">Comenta el capítulo</div> 
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/es_ES/all.js#appId=169963506398640&amp;xfbml=1"></script>
+<fb:comments href="http://Animevision.org/<?=$anime['nom_capitulo']?>" num_posts="10" width="700"></fb:comments> 
+</div>
+</td>
+<td width="220" valign="top">
+<center>
+<div class="items-titulo" style="width: 200px" align="center">DESCARGAR</div>
+<p></p>
+<? if($anime['embed']){?>
+<div class="descargar">
+<a href="<?=$anime['url']?>" target="_blank">
+<img src="http://Animevision.org/imagenes/descargar.gif" alt="Descargar" width="200" height="50" border="0" longdesc="<?=$anime['nom']?> - <?=$anime['nom_capitulo']?>"></a>
+</div><? }?>
+<p></p>
+<div class="items-titulo" style="width: 200px" align="center">Publicidad</div>
+<p></p>
+<p>
+<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=160 HEIGHT=600 SRC=""></IFRAME> 
+</center>
+</td>
+<!-- FINAL CUERPO --> 
+</tr></table></center>
+</div>
+<!-- FINAL --> 
+</div>
+<!-- INICIO FOOTER --> 
+<div id="footer" style="height: 90px"><div id="footer-centro"> 
+<strong><?php echo $sitio; ?> © 2011</strong>
+<br> 
+Ningún video está alojado en nuestros servidores, todos son enlaces tomados 
+desde diferentes servidores gratuitos como: Megaupload,, Megavideo, Y muchos 
+más.<p><script type="text/javascript" src="http://widgets.amung.us/small.js"></script><script type="text/javascript">WAU_small('g849m99ad16k')</script></div></div> 
+<!-- FINAL FOOTER -->
+</body>
+</html>

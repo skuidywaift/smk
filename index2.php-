@@ -1,0 +1,594 @@
+﻿<?php
+function limpia($var){
+	$var = strip_tags($var);
+	$malo = array("\\",";","\'","'",'"','\"');
+	$i=0;$o=count($malo);
+	while($i<=$o){
+		$var = str_replace($malo[$i],"",$var);
+		$i++;
+	}
+	return $var;
+}
+function LimpiarTodo($datos){
+	if(is_array($datos)){
+		$datos = array_map('limpia',$datos);
+	}else{
+		die("<font color=#ff0000><b>Error:</b></font> La funcion <b>LimpiarTodo</b> debe contener un arreglo.");
+	}
+	return $datos;	
+}
+### Seguridad ###
+if($_POST){
+	$_POST =& LimpiarTodo($_POST);
+}
+if($_GET){
+	$_GET =& LimpiarTodo($_GET);
+}
+### Seguridad  ###
+//
+@require_once"Procesos/Configurar.php";
+@require_once"Procesos/Core_Funciones.php";
+//
+/*/////////////////////////////////*/
+$mo=$_GET['m'];
+switch ($mo){
+    case "buscar":
+$busqueda=ucwords(str_replace('+',' ',limpiar_busqueda($_GET['q'])));
+$titulo=ucwords($busqueda)." | ".$titulo;
+        break;
+    case "letra":
+if(strlen($_GET['a'])<2){$letra=$_GET['a'];}else{ redireccionar(); die();}
+$titulo="Anime por letra: ".ucwords($letra)." | ".$titulo;
+        break;
+}
+/*/////////////////////////////////*/
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title><?php echo $titulo; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="La mejor web para ver Anime Online Gratis, mira los &uacuite;ltimos cap&iacute;tulos de los animes del momento sin ninguna clase de restricci&oacute;n | Anime para ver Online y descargar | Naruto Shippuden | Bleach | Dragon Ball Kai | Tokyo Magnitude 8.0 | Onepiece y m&aacute;s."> 
+<meta name="keywords" content="anime online espa&ntilde;ol, anime online gratis, anime online naruto, anime online naruto shippuden, anime online sub espa&ntilde;ol, anime online free, anime online latino, anime online bleach, animeid, anime id, animes, anime, ecchi, anime online, Naruto Shippuden, Anime online, Anime en Descarga Directa, Ver Anime Online.">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name='robots' content='index, follow'> 
+<meta name='googlebot' content='index, follow'>
+<meta name='author' content='<?php echo $sitio; ?>'> 
+<meta name='copyright' content='<?php echo $sitio; ?> <?=date("Y")?> '> 
+<meta name='revisit' content='1 days' /> 
+<meta http-equiv="Content-Language" content="es">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<base href="http://videosanime.net/">
+<link href="Estilo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="Js/jquery-1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.boxgrid.captionfull').hover(function(){
+    $(".cover", this).stop().animate({top:'212px'},{queue:false,duration:160});
+    }, function() {
+    $(".cover", this).stop().animate({top:'212px'},{queue:false,duration:360});
+    });
+    });
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    	$(document).ready(function(){
+		$("dd:not(:first)").hide();
+		$("dt a").click(function(){
+			$("dd:visible").slideUp("slow");
+			$(this).parent().next().slideDown("slow");
+			return false;
+		});
+	});
+	</script> 
+</head>
+<body>
+<div id="container">
+<div style="position: absolute; width: 100px; height: 12px; z-index: 1; left: 108px; top: 138px" id="capa1">
+	<div style="position:absolute; margin-top:-31px; margin-left:22px;" align="center"> 
+<embed allowfullscreen='false' allowscriptaccess='always' flashvars='file=http://50.7.243.50:8106/;stream.nsv&amp;type=mp3&amp;volume=100&amp;autostart=true&amp;frontcolor=0x000000&amp;backcolor=0x96deff&amp;lightcolor=0x005b84' height='18' id='ply' name='ply' quality='high' src='http://radioanime.bligoo.com/media/users/9/491639/files/42634/mediaplayer.swf' type='application/x-shockwave-flash' width='190'/> 
+</div></div>
+<!-- INICIO HEADER -->
+<div id="supe">Todos los Animes Online | Todos los capitulos solo en <?php echo $sitio; ?></div> 
+<div id="l" class="c" style="width: 1000px; height: 110px"> 
+<a href="/" title="Anime Online" style="float: left;"> 
+<img src="http://videosanime.net/videosanime-3.jpg" alt="Anime Online" name="logo" width="990" height="100" border="0" id="logo"></a></div> 
+<div class="menu-nav" style="height: 50px"><div class="index-nav"><ul> 
+<li><a href="/">Inicio</a></li> 
+<li><a href="http://videosanime.net/chat.php" target="_blank" >Chat</a></li> 
+<li><a href="http://anime-radio.net/" target="_blank" >AnimeRadio</a></li>
+<li><a href="http://fan-deanime.net/" target="_blank" >FanAnime</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+</ul>
+<!-- INICIO BUSCADOR --> 
+ <p></p><p></p>
+<form action="http://videosanime.net" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3828104147601069:lmnqytri2h8" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Buscar Anime" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com.pe/cse/brand?form=cse-search-box&amp;lang=es"></script> 
+<!-- FIN BUSCADOR -->
+</div></div> 
+<!-- FINAL HEADER -->
+<div id="pub-contenedor"> 
+<div id="pub-1"><div class="publicidad">
+<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=300 HEIGHT=250 SRC="http://videosanime.net/1.php"></IFRAME> 
+</div></div>
+<div id="pub-2"><div class="publicidad"> 
+<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=300 HEIGHT=250 SRC="http://videosanime.net/2.php"></IFRAME> 
+</div></div>
+<div id="pub-3"><div class="publicidad"> 
+<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=300 HEIGHT=250 SRC="http://videosanime.net/3.php"></IFRAME> 
+</div></div>
+</div> 
+<div id="main"> 
+<div id="cse-search-results"></div>
+<script type="text/javascript">
+  var googleSearchIframeName = "cse-search-results";
+  var googleSearchFormName = "cse-search-box";
+  var googleSearchFrameWidth = 800;
+  var googleSearchDomain = "www.google.com.pe";
+  var googleSearchPath = "/cse";
+</script>
+<script type="text/javascript" src="http://www.google.com/afsonline/show_afs_search.js"></script>
+<!-- INICIO ABECEDARIO --> 
+<div align="center"> 
+<div class="paginacion"> 
+<span class="pag"> 
+<a href="letra/1.html">#</a>
+<a href="letra/a.html">A</a>
+<a href="letra/b.html">B</a>
+<a href="letra/c.html">C</a>
+<a href="letra/d.html">D</a>
+<a href="letra/e.html">E</a>
+<a href="letra/f.html">F</a>
+<a href="letra/g.html">G</a>
+<a href="letra/h.html">H</a>
+<a href="letra/i.html">I</a>
+<a href="letra/j.html">J</a>
+<a href="letra/k.html">K</a>
+<a href="letra/l.html">L</a>
+<a href="letra/m.html">M</a>
+<a href="letra/n.html">N</a>
+<a href="letra/o.html">O</a>
+<a href="letra/p.html">P</a>
+<a href="letra/q.html">Q</a>
+<a href="letra/r.html">R</a>
+<a href="letra/s.html">S</a>
+<a href="letra/t.html">T</a>
+<a href="letra/u.html">U</a>
+<a href="letra/v.html">V</a>
+<a href="letra/w.html">W</a>
+<a href="letra/x.html">X</a>
+<a href="letra/y.html">Y</a>
+<a href="letra/z.html">Z</a>
+</span> 
+</div> 
+</div>
+<!-- FIN ABECEDARIO --> 
+<!-- INICIO CUERPO --> 
+<center><table border="0" width="990" cellspacing="0" cellpadding="0"><tr>
+<!-- IZQ -->
+<td width="790" valign="top">
+<?php
+if($mo=="letra"){
+?>
+<div class="items-titulo" style="width: 790px" align="center">Ver Animes con la letra  <?=ucwords($letra)?></div>
+<br>
+<div id="lista-animes"><?php letra_anime($letra); ?></div>
+<?
+}elseif($mo=="buscar"){
+?>
+<div class="items-titulo" style="width: 790px" align="center">Resultados de la Busqueda: <?=$busqueda?></div>
+<div class="contenido">
+<?php
+$_pagi_sql="SELECT nombre,id_capitulo,id_anime,nombre_capitulo FROM animes INNER JOIN capitulos ON animes.id=capitulos.id_anime WHERE MATCH(nombre) AGAINST('".$busqueda."') OR MATCH(nombre_capitulo) AGAINST('".$busqueda."')";
+$_pagi_cuantos = 20;
+$_pagi_nav_num_enlaces = 8;
+//definimos qu&eacute; ir&aacute; en el enlace a la p&aacute;gina anterior
+$_pagi_nav_anterior = "Atras";// podr&iacute;a ir un tag <img> o lo que sea
+//definimos qu&eacute; ir&aacute; en el enlace a la p&aacute;gina siguiente
+$_pagi_nav_siguiente = "Siguiente";// podr&iacute;a ir un tag <img> o lo que sea
+$_pagi_nav_estilo = "current";
+@require"Procesos/paginator.inc.php";
+if(mysql_num_rows($_pagi_result)> 0){
+while($d=mysql_fetch_array($_pagi_result)){
+$numeral++;
+echo "<div class=\"lista-capitulos\" style=\"width:790px\"> 
+<ul id=\"lcd\"style=\"width:790px\"> 
+<li class=\"lc\" style=\"width:790px\"><a href=\"episodio/".$d['id_capitulo']."/".hacer_url($d['nombre'])."_".hacer_url($d['nombre_capitulo']).".html\" class=\"lcc\">".$d['nombre']." - ".$d['nombre_capitulo']."</a></li> 
+</ul> 
+</div>"; 
+} 
+}else { 
+echo "<a href=\"#\">No se encontraron resultados para: ".$busqueda."</a>"; 
+$nohaypag="yes";
+}
+?>
+</div>
+<div class="contenido-abajo"></div>
+<center><div class="pagination"><? if(!$nohaypag){ echo $_pagi_navegacion; } ?></div></center>
+<?
+}else{
+?>
+<div id="column1"></div>
+<div class="items-titulo" style="width: 790px">Nuevos Animes Agregados</div>
+<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=700 HEIGHT=370 SRC="http://videosanime.net/rotador/"></IFRAME>
+<div id="lista-animes">
+<div>
+<?php index_caratula(); ?>
+</div>
+</div>
+<?php }?>
+</td>
+<!-- DER -->
+<td width="200" valign="top">
+<div class="items-titulo" style="width: 200px" align="center">Lista Completa</div>
+<div id="fb-root"></div><script src="http://connect.facebook.net/es_ES/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/videosanime" width="200" show_faces="true" border_color="" stream="false" header="false"></fb:like-box>
+<center><a target="_blank" href="http://www.ichibantop.com/es/index.php?a=in&u=videosanime"><img src="http://www.ichibantop.com/b88.gif" alt="Vota esta web!!" border="0" /></a><font face="Verdana" size="1"><table id="table2951" cellSpacing="0" cellPadding="0" width="100%" border="0" height="29">
+																					<tr>
+																						<td background="file:///C:/AppServ/www/1/ani/Images/hisa_03.gif" height="34" width="204">
+																						<table id="table2952" height="12" cellSpacing="0" cellPadding="0" width="87%" align="center" border="0">
+																							<tr>
+																								<td vAlign="center" height="12">
+
+																								<p align="right" class="Estilo4" style="text-align: center"><font size="1" color="#FFFFFF"><b>Animes mas vistos</b></font></td>
+																							</tr>
+																						</table></td>
+																					</tr>
+																					</table>
+
+				<table width="170" border="0" align="center" cellpadding="0" cellspacing="0" id="table2953">
+					<td width="170" valign="top">
+					<div class="ultimos"></div>
+					<ul class="menu">
+					
+						<ul class="menu">
+							<font face="Verdana" size="1">
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Bubblegum Crisis">
+							Bubblegum Crisis
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="imagenes/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; ">&nbsp;</span></span></span></span></span></a> </li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Katekyo Hitman">
+							Katekyo Hitman
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; ">&nbsp;</span></span></span></span></span></a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=DNAngel">
+							DNAngel
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; ">&nbsp;</span></span></span></span></span></a> </li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Skip Beat">
+							Skip Beat
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; "></span></span></span></span></span></a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Omamori Himari">
+							Omamori Himari
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; ">&nbsp;</span></span></span></span></span></a> </li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Rosen Maiden">
+							Rosen Maiden
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; "></span></span></span></span></span></a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Mermaid Melody">
+							Mermaid Melody
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; ">&nbsp;</span></span></span></span></span></a> </li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Kare Kano">
+							Kare Kano
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 16px; text-align: -webkit-left; ">
+							<span class="Apple-style-span" style="font-size: 11px; text-align: center; ">
+							<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; ">
+							<span class="Apple-style-span" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; -webkit-border-horizontal-spacing: 1px; -webkit-border-vertical-spacing: 1px; ">
+							<img src="file:///C:/AppServ/www/1/ani/Images/new.gif" alt="Foro" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: middle; ">&nbsp;</span></span></span></span></span></a></li>
+
+
+
+                                            </font>
+
+
+
+						</ul>
+
+							
+					</ul>
+					<dl>
+						<dt><a href="file:///C:/AppServ/www/1/ani/index.html"><font color="#FFFFFF">A - 
+						F</font></a></dt>
+						<dd>
+						<ul class="menu">
+							<font face="Verdana" size="1"><li><a target="musica" href="http://videosanime.net/anime/Astarotte-no-Omocha_32.html">
+							Astarotte no Omocha!</a></li>
+                     <li><a target="musica" href="http://videosanime.net/anime/Aria-The-Scarlet-Ammo_31.html">
+							Aria The Scarlet Ammo</a></li>
+							<li><a target="musica" href="http://videosanime.net/anime/Ao-no-Exorcist_30.html">
+							Ao no Exorcist</a></li>
+
+
+							<li><a target="musica" href="http://videosanime.net/anime/Ano-Hi-Mita-Hana-no-Namae_29.html">
+							Ano Hi Mita Hana no Namae</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Abnormal-Physiology-Seminar_28.html">
+							Abnormal Physiology Seminar</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/A-Channel_27.html">
+							A Channel</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Abenobashi-Mahou-Shoutengai_16.html">
+							Abenobashi Mahou Shoutengai</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Air-Tv_15.html">Air Tv</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Air-Gear_14.html">Air Gear</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Aishiteruze-Baby_13.html">Aishiteruze Baby</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Akane-iro-ni-Somaru-Saka_12.html">Akane-iro ni Somaru Saka</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Akkikan_11.html">Akkikan!</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Amaenaideyo_9.html">Amaenaideyo!!</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Amaenaideyo-Katsu_10.html">Amaenaideyo!! Katsu!!</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Angel-Beats_8.html">Angel Beats!</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Asatte-no-Houko_7.html">Asatte no Houko</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Asu-no-Yoichi_6.html">
+							Asu no Yoichi
+							</a> </li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Amagami-SS_5.html">Amagami SS</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Beck-Mongolian-Chop-Squad_82.html">Beck</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/B-Gata-H-Kei_75.html">B Gata H Kei</a></li>
+
+							
+                                            </font>
+							<font face="Verdana" size="1">
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Bleach_24.html">Bleach</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Bakemonogatari_3.html">Bakemonogatari</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Chaos-Head_71.html">Chaos Head</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Chu-Bra_54.html">Chu-Bra!!</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Clannad_49.html">Clannad</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/C-The-Money-of-Soul-and-Possibility-Control_33.html">The Money of Soul and Possibility Control</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Dance-in-the-Vampire-Bund_83.html">Dance in the Vampire Bund</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Dears_55.html">Dears</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Death-Note_41.html">Death Note</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Denpa-Onna-to-Seishun-Otoko_37.html">Denpa Onna to Seishun Otoko</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Deadman-Wonderland_34.html">Deadman Wonderland</a></li>
+							<li>
+							<a target="musica" href="http://videosanime.net/anime/Ef--a-Tale-of-Melodies_84.html">Ef - a Tale of Melodies</a></li><li>
+							<a target="musica" href="http://videosanime.net/anime/Elfen-Lied_42.html">Elfen Lied</a></li><li>
+							<a target="musica" href="http://videosanime.net/anime/Full-Metal-Alchemist_36.html">Full Metal Alchemist.</a></li><li>
+							<a target="musica" href="http://videosanime.net/anime/Futakoi_1.html">Futakoi</a></li>
+							<a target="musica" href="http://videosanime.net/anime/Futakoi-Alternative_2.html">Futakoi Alternative</a></li>
+
+							
+
+
+
+						</ul>
+						<p></p>
+						</font>
+	</dd> 
+    					<div class="menu-horizontal-abajo"></div>
+						<dt><a href="#"><font color="#FFFFFF">G - L</font></a></dt>
+						<dd>
+						<ul class="menu">
+							<font face="Verdana" size="1">
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=GakkounoKaidan">Gakkou no Kaidan</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Gto">GTO</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=GundamSeedDestiny">Gundam Seed Destiny</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=GundamWing">Gundam Wing</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Gundam00">Gundam 00</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=HajimenoIppo">Hajime no Ippo</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Hellgirl">Hell girl</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=InuYasha">InuYasha</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Izumo">Izumo</a></li>
+
+                                            </font>
+
+
+
+						</ul>
+	</dd> 
+    					<div class="menu-horizontal-abajo"></div>
+						<dt><a href="#">
+						<span style="background-repeat: repeat; background-position: 0 0">
+						M</span><font color="#FFFFFF"> - R</font></a></dt>
+						<dd>
+						<ul class="menu">
+							<font face="Verdana" size="1">
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Nana">Nana</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Naruto">Naruto</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Natsu No Arashi">Natsu No Arashi</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Neongenesisevangelio">Neon genesis evangelio</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Noir">Noir</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onepiece">One piece</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onegaiteacher">Onegai teacher</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onegaitwins">Onegai twins</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=OkamiKakushi">Okami Kakushi</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Pita Ten">Pita Ten</a></li>
+						<dt><a href="#"><font color="#FFFFFF">S - Z</font></a></dt>
+						<dd>
+						<ul class="menu">
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Nana">Nana</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Naruto">Naruto</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Natsu No Arashi">Natsu No Arashi</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Neongenesisevangelio">Neon genesis evangelio</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Noir">Noir</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onepiece">One piece</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onegaiteacher">Onegai teacher</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onegaitwins">Onegai twins</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=OkamiKakushi">Okami Kakushi</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Pita Ten">Pita Ten</a></li>
+
+
+						
+						</ul>
+	
+
+
+						</ul>
+
+
+						
+                                            </font>
+	</dd> 
+    					
+                                                	<font face="Verdana" size="1">
+
+						<dt><a href="#">0<font color="#FFFFFF"> - 9</font></a></dt>
+						<dd>
+						<ul class="menu">
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Nana">Nana</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Naruto">Naruto</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Natsu No Arashi">Natsu No Arashi</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Neongenesisevangelio">Neon genesis evangelio</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Noir">Noir</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onepiece">One piece</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onegaiteacher">Onegai teacher</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Onegaitwins">Onegai twins</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=OkamiKakushi">Okami Kakushi</a></li>
+							<li>
+							<a target="musica" href="http://anime-radio.net/radio/index.php?genero=Pita Ten">Pita Ten</a></li>
+
+
+						
+						</ul>
+
+                                            </font>
+
+
+
+	  					<dd>
+    					<div class="menu-horizontal-abajo"></div>
+						</dl></td>
+					</tr>
+				</table>
+
+                                            </font>
+
+
+
+	  	</center>
+</td>
+
+<!-- FIN -->
+</tr></table><center>
+<!-- FINAL CUERPO -->
+</div>
+<!-- FINAL --> 
+  <!-- INICIO FOOTER --> 
+<div id="footer" style="height: 90px">
+	<div id="footer-centro" style="width: 975px; height: 55px"> 
+<strong><?php echo $sitio; ?> © 2011</strong>
+<br> 
+Ningún video está alojado en nuestros servidores, todos son enlaces tomados desde diferentes servidores gratuitos como: Megaupload,, Megavideo, 
+Y muchos más.
+<p><script type="text/javascript" src="http://widgets.amung.us/small.js"></script><script type="text/javascript">WAU_small('g849m99ad16k')</script></div></div> 
+<!-- FINAL FOOTER -->
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="contador javascript" ><script  type="text/javascript" >
+try {Histats.start(1,1546030,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?1546030&101" alt="contador javascript" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+ 
+
+ 
+</body>
+</html>

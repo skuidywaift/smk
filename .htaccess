@@ -1,0 +1,24 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^(www\.pruebas.animevision\.org)(:80)? [NC]
+RewriteRule ^(.*) http://pruebas.animevision.org//$1 [R=301,L]
+order deny,allow
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+DirectoryIndex index.php
+
+RewriteRule ^Busqueda/(.*?)/pag/([0-9]+)/$ index.php?q=$1&m=buscar&page=$2 [L,NC,QSA]
+RewriteRule ^Busqueda/(.*?)/$ index.php?q=$1&m=buscar [L,NC,QSA]
+RewriteRule ^letra/(.*?).html$ index.php?m=letra&a=$1 [L,NC,QSA]
+RewriteRule ^categoria/(.*?).html$ index.php?m=categoria&a=$1 [L,NC,QSA]
+RewriteRule ^Anime/(.*?)/([0-9]+).html$ Animes_1.php?t=$1&id=$2 [L,NC,QSA]
+RewriteRule ^embedhentai/(.*?)/([0-9]+).html$ EmbedHentai.php?t=$1&id=$2 [L,NC,QSA]
+RewriteRule ^ova/(.*?)/([0-9]+).html$ Ovas_1.php?t=$1&id=$2 [L,NC,QSA]
+RewriteRule ^pelicula/(.*?)/([0-9]+).html$ Peliculas_1.php?t=$1&id=$2 [L,NC,QSA]
+RewriteRule ^ver/(.*?)/([0-9]+).html$ Animes_2.php?id=$2&t=$1 [L,NC,QSA]
+RewriteRule ^embed/(.*?)/([0-9]+).html$ EmbedVideo.php?id=$2&t=$1 [L,NC,QSA]
+RewriteRule ^login/$ inc/php/login.php [L,NC,QSA]
+RewriteRule ^logout/$ inc/php/login.php?a=logout [L,NC,QSA]
+RewriteRule ^admin/$ inc/php/admin.php [L,NC,QSA]

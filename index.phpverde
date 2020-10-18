@@ -1,0 +1,244 @@
+<?php
+function limpia($var){
+	$var = strip_tags($var);
+	$malo = array("\\",";","\'","'",'"','\"');
+	$i=0;$o=count($malo);
+	while($i<=$o){
+		$var = str_replace($malo[$i],"",$var);
+		$i++;
+	}
+	return $var;
+}
+function LimpiarTodo($datos){
+	if(is_array($datos)){
+		$datos = array_map('limpia',$datos);
+	}else{
+		die("<font color=#ff0000><b>Error:</b></font> La funcion <b>LimpiarTodo</b> debe contener un arreglo.");
+	}
+	return $datos;	
+}
+### Seguridad ###
+if($_POST){
+	$_POST =& LimpiarTodo($_POST);
+}
+if($_GET){
+	$_GET =& LimpiarTodo($_GET);
+}
+### Seguridad  ###
+//
+@require_once"Procesos/Configurar.php";
+@require_once"Procesos/Core_Funciones.php";
+//
+$mo=$_GET['m'];
+switch ($mo){
+    case "buscar":
+$busqueda=ucwords(str_replace('+',' ',limpiar_busqueda($_GET['q'])));
+$titulo=ucwords($busqueda)." | ".$titulo;
+        break;
+    case "letra":
+if(strlen($_GET['a'])<2){$letra=$_GET['a'];}else{ redireccionar(); die();}
+$titulo="Anime por letra: ".ucwords($letra)." | ".$titulo;
+        break;
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<title><?php echo $titulo; ?> Online | Naruto Shippuden 235| Bleach 346| One piece 521 | Anime Gratis Online sin ninguna clase de restricci�n de tiempo - <?php echo $sitio; ?> Online</title>
+<meta property="og:title" content="<?php echo $sitio; ?> - Lo mejor en Animes">
+<meta property="og:site_name" content="<?php echo $titulo; ?>">
+<meta property="og:type" content="tv_show">
+<meta property="og:image" content="<?php echo $web; ?>/img/imgfb.jpg">
+<meta property="og:description" content="Para ver el capitulo da click en el enlace.">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Ver Anime Online HD, todo el Anime Online esta almacenado en distintos servidores para ver en alta calidad: Megaupload, Hotfile, etc. Anime Online Sub Espa�ol.">
+<meta name="keywords" content="anime online en espa�ol, anime online gratis, anime online naruto, anime online naruto shippuden, anime online sub espa�ol, anime online free, anime online latino, anime online bleach, animeid, animes, anime, ecchi, anime online, Naruto Shippuden, Anime online, Anime en Descarga Directa, Ver Anime Online, Anime en Linea, Anime Online HD, Naruto Shippuden Online, HD, HQ, Megaupload, Fileserve, Hotfile, Episodio, Capitulo, Naruto Shipuuden Capitulo, Online, Ver Naruto Shippuden Online, Ver Online, Radio Anime, Videos Anime Online, High Quality, Ver, Watch Naruto Online, Mirar Anime Online, Naruto Shippuuden Completa Online, Ultimo Capitulo Online">
+<link rel="image_src" href="/img/imgfb.jpg">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<base href="<?php echo $web; ?>">
+<link rel="alternate" type="application/rss+xml" title="<?php echo $sitio; ?> RSS Feed" href="/rss.php">
+<script type="text/javascript" src="/css/prototaculous.js"></script>
+<script type="text/javascript" src="/css/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/css/jquery.tipsy.js"></script>
+<script type="text/javascript" src="/css/jquery.jtruncate.pack.js"></script>
+<script type="text/javascript" src="/css/script.js"></script>
+<script type="text/javascript"></script>
+<!--[if lte IE 7]><link href="/css/noie.css" rel="stylesheet" type="text/css">
+<![endif]--><!--[if IE 6]><iframe src="/noie.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="100%" id="i"></iframe>
+<![endif]--><!--[if IE 7]><iframe src="/noie.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="700" id="i" style="height:500px"></iframe>
+<![endif]--><!--[if IE ]><style type="text/css">#b{/*margin-top: -65px;*/} #q{height: 22px; margin-left: 2px; margin-top: 0px; padding-left: 6px; padding-top: 8px; text-shadow: #AEDDFF 0px 1px 0px; width: 190px;} #bb:hover{height: 31px; margin-left: 3px; margin-top: 0px; outline: none; width: 51px;}</style>
+<![endif]-->
+
+<script src="http://px.smowtion.com/validate?sid=136847" type="text/javascript"></script>
+</head>
+<body>
+<div id="header"><div id="cb">
+<!-- arriba --><div id="hh"><div id="eih"></div><div id="h"><h1 class="title">Naruto Shippuden 235 | Bleach 346 | One piece 521</h1></div><div id="edh"></div></div>
+<!-- logo --><div id="l" class="c"><a href="<?php echo $web; ?>" title="Anime Gratis - <?php echo $sitio; ?> Online" style="float: left;"><img src="/logo.png" alt="Logo <?php echo $titulo; ?>" name="logo" width="240" height="100" border="0" id="logo"></a>
+
+</div></div>
+<div id="mm"><div id="eim"></div><div id="m">
+<?php include("css/menu.php"); ?>
+<!-- buscador -->
+<form action="buscador.php" method="get" id="b">
+<iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=<?php echo $face; ?>&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" title="&iquest;Te ha gustado la web?" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowTransparency="true"></iframe>
+<a href="http://twitter.com" target="_blank" style="displa:block;float:left;margin:3px;"><img src="/img/tw.png" alt="Twitter" width="24" height="24" border="0" class="tip" title="S&iacute;guenos en Twitter"></a>
+<a href="<?php echo $face; ?>" target="_blank" style="displa:block;float:left;margin:3px;"><img src="/img/fb.png" alt="Facebook" width="24" height="24" border="0" class="tip" title="S&iacute;guenos en Facebook"></a>
+<input type="hidden" name="site" value="<?php echo $sitio; ?>"><input type="text" id="q" name="q" value="Ingresa tu b&uacute;squeda" onblur="if(this.value==''){ var texto=this.value='Ingresa tu b&uacute;squeda'; }" onfocus="if(this.value=='Ingresa tu b&uacute;squeda') this.value='';"><input type="submit" value="Buscar" id="bb" style="text-indent:-9999px"></form>
+</div><div id="edm"></div></div></div>
+
+<div id="main">
+<div id="mt"></div>
+<div id="mmm">
+<div class="cc fleft"><div class="ctit">Animes por orden alfab&eacute;tico:</div><div class="ccon">
+<ul class="alfa" style="margin-top:6px; margin-left: 5px;"><li><a href="letra/a.html" class="let">A</a></li><li><a href="letra/b.html" class="let">B</a></li><li><a href="letra/c.html" class="let">C</a></li><li><a href="letra/d.html" class="let">D</a></li><li><a href="letra/e.html" class="let">E</a></li><li><a href="letra/f.html" class="let">F</a></li><li><a href="letra/g.html" class="let">G</a></li><li><a href="letra/h.html" class="let">H</a></li><li><a href="letra/i.html" class="let">I</a></li><li><a href="letra/j.html" class="let">J</a></li><li><a href="letra/k.html" class="let">K</a></li><li><a href="letra/l.html" class="let">L</a></li><li><a href="letra/m.html" class="let">M</a></li><li><a href="letra/n.html" class="let">N</a></li><li><a href="letra/o.html" class="let">O</a></li><li><a href="letra/p.html" class="let">P</a></li></ul>
+<ul class="alfa" style="margin-left: 70px"><li><a href="letra/q.html" class="let">Q</a></li><li><a href="letra/r.html" class="let">R</a></li><li><a href="letra/s.html" class="let">S</a></li><li><a href="letra/t.html" class="let">T</a></li><li><a href="letra/u.html" class="let">U</a></li><li><a href="letra/v.html" class="let">V</a></li><li><a href="letra/w.html" class="let">W</a></li><li><a href="letra/x.html" class="let">X</a></li><li><a href="letra/y.html" class="let">Y</a></li><li><a href="letra/z.html" class="let">Z</a></li><li><a href="letra/1.html" class="let">#</a></li></ul>
+</div></div>
+<div class="cc fleft"><div class="ccon"><IFRAME src="http://anime-radio.net/portal/reproductor.php" marginwidth="1" marginheight="1" height="100" width="359" scrolling="no" border="0" frameborder="0" name="I1" align="middle"></IFRAME></div></div>
+
+<table border="0" width="981" cellspacing="0" cellpadding="0"><tr>
+
+<!-- der -->
+<td valign="top" width="243">
+<div id="right">
+
+<div class="dt">Series en emision</div>
+<div class="dm">
+<ul>
+<li><a href="http://videosanime.net/anime/Naruto-Shippuden/23.html">Naruto Shippuuden</a> 
+</li>
+<li><a href="http://videosanime.net/anime/One-Piece/25.html">One Piece</a>
+</li>
+<li><a href="http://videosanime.net/anime/Bleach/24.html">Bleach</a> 
+</li>
+<li><a href="http://videosanime.net/anime/Bakuman-2/108.html">Bakuman 2</a>    
+</li>
+<li><a href="http://videosanime.net/anime/Fate-Zero/109.html">Fate Zero</a>  
+</li>
+<li><a href="http://videosanime.net/anime/C3/110.html">C3</a></li>
+<li><a href="http://videosanime.net/anime/Hunter-x-Hunter-Remake/111.html">Hunter x Hunter Remake</a>        
+</li>
+<li><a href="http://videosanime.net/anime/Maji-de-Watashi-ni-Koi-Shinasai/112.html">Maji de Watashi ni Koi Shinasai!!</a>         
+</li>
+<li><a href="http://videosanime.net/anime/Phi-Brain-Kami-no-Puzzle/113.html">Phi Brain: Kami no Puzzle</a>    
+</li>
+<li><a href="http://videosanime.net/anime/Towa-no-Quon-/115.html">Towa no Quon</a>   
+</li>
+<li><a href="http://videosanime.net/anime/Kami-Nomi-zo-Shiru-SekaiYonnin-to-Idol/116.html">Kami Nomi zo Shiru Sekai:Yon...</a>    
+</li>
+<li><a href="http://videosanime.net/anime/Shinryaku-Ika-Musume-02/117.html">Shinryaku!Ika Musume 02</a>   
+</li>
+<li><a href="http://videosanime.net/anime/Kimi-to-Boku/118.html">Kimi to Boku</a>
+</li>
+<li><a href="http://videosanime.net/anime/Tamayura-Hitotose/119.html">Tamayura Hitotose</a>  
+</li>
+<li><a href="http://videosanime.net/anime/Kyoukai-Senjou-no-Horizon/120.html">Kyoukai Senjou no Horizon</a> 
+</li>
+<li><a href="http://videosanime.net/anime/Morita-san-wa-Mukuchi-2/121.html">Morita-san wa Mukuchi 2</a><li>
+<a href="http://videosanime.net/anime/Chihayafuru/122.html">Chihayafuru</a>
+<li><a href="http://videosanime.net/anime/Maken-ki/123.html">Maken-ki!</a>  
+</li>
+<li><a href="http://videosanime.net/anime/Mashiro-iro-Symphony-The-Color-of-Lovers/125.html">Mashiro-iro Symphony: The Co...</a>
+</li>
+<li><a href="http://videosanime.net/anime/Persona-4-The-Animation/126.html">Persona 4 The Animation</a>
+</li>
+<li><a href="http://videosanime.net/anime/Shakugan-no-Shana-III/127.html">Shakugan no Shana III</a>
+</li>
+<li><a href="http://videosanime.net/anime/Sekaiichi-Hatsukoi-2/128.html">Sekaiichi Hatsukoi 2</a>
+</li>
+<li><a href="http://videosanime.net/anime/Ben-To/129.html">Ben-To</a>
+</li>
+<li><a href="http://videosanime.net/anime/Mobile-Suit-Gundam-AGE/130.html">Mobile Suit Gundam AGE</a>
+</li>
+<li><a href="http://videosanime.net/anime/Mirai-Nikki/131.html">Mirai Nikki</a>
+</li>
+<li><a href="http://videosanime.net/anime/Working-Season-2/132.html">Working!! Season 2</a>
+</li>
+<li><a href="http://videosanime.net/anime/Digimon-Xros-Wars-Toki-o-Kakeru-Shounen-Hunter-tachi/133.html">Digimon Xros Wars: Toki o Kak...</a>
+</li>
+<li><a href="http://videosanime.net/anime/Un-Go/134.html">Un-Go</a>
+</li>
+<li><a href="http://videosanime.net/anime/Guilty-Crown/135.html">Guilty Crown</a>
+</li>
+<li><a href="http://videosanime.net/anime/Boku-wa-Tomodachi-ga-Sukunai/136.html">Boku wa Tomodachi ga Sukunai</a>
+</li>
+<li><a href="http://videosanime.net/anime/Copihan/137.html">Copihan</a>
+</li>
+<li><a href="http://videosanime.net/anime/Cross-Fight-Bedaman/139.html">Cross Fight Bedaman</a>
+</li>
+<li><a href="http://videosanime.net/anime/Chibi-Devi/140.html">Chibi Devi!</a>
+</li>
+<li><a href="http://videosanime.net/anime/Last-Exile-Ginyoku-no-Fam/143.html">Last Exile: Ginyoku no Fam</a>
+</li>
+
+</li></li></ul></div>
+<div class="dt">Ultimos Series Agregados</div><div class="dm"><?php index_anipel(); ?></div><div class="db"></div>
+<div class="dt">Lista completa de animes</div><div class="dm" id="mamain"><ul id="holder"><?php index_0_z(); ?></ul></div><div style="height: 23px;" class="dm"></div>
+<div class="dt">Facebook <?php echo $titulo; ?></div><div class="dm"><iframe src="http://www.facebook.com/plugins/likebox.php?href=<?php echo $face; ?>&amp;width=221&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=621" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:221px; height:621px;" allowTransparency="true"></iframe></div>
+<script type="text/javascript">(function(p){p.fn.sweetPages=function(c){if(!c)c={};var d=c.perPage||3;var f=this;var g=f.find('li');g.each(function(){var a=p(this);a.data('height',a.outerHeight(true))});var h=Math.ceil(g.length/d);if(h<2)return this;var j=p('<div class="swControls">');for(var i=0;i<h;i++){g.slice(i*d,(i+1)*d).wrapAll('<div class="swPage" />');j.append('<a href="javascript:void();" class="swShowPage" title="P&aacute;gina: '+(i+1)+'">'+(i+1)+'</a>')}f.append(j);var k=0;var l=0;var m=f.find('.swPage');m.each(function(){var a=p(this);var b=0;a.find('li').each(function(){b+=p(this).data('height')});if(b>k)k=b;l+=a.outerWidth();a.css('float','left').width(f.width())});m.wrapAll('<div class="swSlider" />');f.height(k);var n=f.find('.swSlider');n.append('<div class="clear" />').width(l);var o=f.find('a.swShowPage');o.click(function(e){p(this).addClass('active').siblings().removeClass('active');n.stop().animate({'margin-left':-(parseInt(p(this).text())-1)*f.width()},'normal');e.preventDefault()});o.eq(0).addClass('active');j.css({'margin-left':'0px'});return this}})(jQuery);jQuery(document).ready(function(){jQuery('#holder').sweetPages({perPage:44});var a=jQuery('.swControls').detach();a.appendTo('#mamain');jQuery('.swShowPage').tipsy({gravity: 's'})});</script><div class="db"></div>
+</td>
+
+<!-- mid -->
+<td valign="top" width="554"><div id="mid">
+<!-- banner rotator -->
+<!-- banner rotator -->
+<div class="m_t"></div>
+<div class="m_m">
+<?php
+if($mo=="letra"){
+?><h1>Ver Animes con la letra <?=ucwords($letra)?></h1>
+<?php letra_anime($letra); ?>
+<?
+}elseif($mo=="buscar"){
+?><h1>Resultados de la busqueda: <?=$busqueda?></h1>
+<?php
+$_pagi_sql="SELECT id,nombre,imagen,catg FROM animes WHERE MATCH(nombre) AGAINST('".$busqueda."') OR MATCH(nombre) AGAINST('".$busqueda."')";
+$_pagi_cuantos = 20;
+$_pagi_nav_num_enlaces = 8;
+//definimos qu&eacute; ir&aacute; en el enlace a la p&aacute;gina anterior
+$_pagi_nav_anterior = "Atras";// podr&iacute;a ir un tag <img> o lo que sea
+//definimos qu&eacute; ir&aacute; en el enlace a la p&aacute;gina siguiente
+$_pagi_nav_siguiente = "Siguiente";// podr&iacute;a ir un tag <img> o lo que sea
+$_pagi_nav_estilo = "current";
+@require"Procesos/paginator.inc.php";
+if(mysql_num_rows($_pagi_result)> 0){
+while($d=mysql_fetch_array($_pagi_result)){
+$numeral++;
+echo "<div class=\"bl\"><a href=\"".hacer_url($d['catg'])."/".hacer_url($d['nombre'])."/".hacer_url($d['id']).".html\"><img src=\"".$d['imagen']."\" class=\"im\" width=\"166\" border=\"0\" height=\"250\"></a><div class=\"tt\"><h1><a href=\"".$i['catg']."/".hacer_url($d['nombre'])."/".hacer_url($d['id']).".html\">".$d['nombre']."  ".$d['nombre_capitulo']."</a></h1></div></div>"; 
+} 
+}else { 
+echo "<a href=\"#\">No se encontraron resultados para: ".$busqueda."</a>"; 
+$nohaypag="yes";
+}
+?><div class="clear"></div></div><div class="m_t"></div><div class="clear"></div><center><div class="pagination"><? if(!$nohaypag){ echo $_pagi_navegacion; } ?></div></center><div class="clear"></div>
+<?
+}else{
+?>
+<!-- NUEVO --><div class="m_t"></div><h1>Ultimos Capitulos:</h1><div class="a"><a href="/ver/Naruto-Shippuden-235/3008.html" title="naruto-shippuden"><img src="http://images.mcanime.net/images/anime/7293.jpg" alt="Naruto Shippuden" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Naruto-Shippuden-235/3008.html" title="Naruto Shippuden ">Naruto Shippuden 235</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 03/11/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Naruto-Shippuden-235/3008.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Kyoukai-Senjou-no-Horizon-5/3007.html" title="Kyoukai Senjou no Horizon"><img src="http://images.mcanime.net/images/anime/10617.jpg" alt="Kyoukai Senjou no Horizon" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Kyoukai-Senjou-no-Horizon-5/3007.html" title="Kyoukai Senjou no Horizon">Kyoukai Senjou no Hor... 5</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 01/11/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Kyoukai-Senjou-no-Horizon-5/3007.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Tamayura-Hitotose-5/3006.html" title="Tamayura-Hitotose"><img src="http://images.mcanime.net/images/anime/11018.jpg" alt="Tamayura Hitotose" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Tamayura-Hitotose-5/3006.html" title="Tamayura-Hitotose">Tamayura-Hitotose 5</a></div><div class="at" style="margin-top:0px"><span>Publicado el: 03/11/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Tamayura-Hitotose-5/3006.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Bleach-346/2958.html" title="bleach"><img src="http://images.mcanime.net/images/anime/4240.jpg" alt="Bleach" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Bleach-346/2958.html" title="Bleach ">Bleach 346</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 01/11/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;http://videosanime.net/ver/bleach-346.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/mobile-suit-gundam-age-4.html" title="mobile-suit-gundam-age"><img src="http://images.mcanime.net/images/anime/11015.jpg" alt="Mobile Suit Gundam AGE" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Mobile-Suit-Gundam-AGE-4/2949.html" title="Mobile Suit Gundam AGE ">Mobile Suit Gundam Age 4</a></div><div class="at" style="margin-top:0px"><span>Publicado el: 30/10/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Mobile-Suit-Gundam-AGE-4/2949.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Working-Season-2-5/2947.html" title="working!!-segunda-temporada"><img src="http://images.mcanime.net/images/anime/11791.jpg" alt="Working!! Segunda Temporada" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Working-Season-2-5/2947.html" title="Working!! Segunda Temporada ">Working!! Segunda Te... 5</a></div><div class="at" style="margin-top:0px"><span>Publicado el: 30/10/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Working-Season-2-5/2947.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/One-Piece-521/2944.html" title="one-piece"><img src="http://images.mcanime.net/images/anime/836.jpg" alt="One Piece" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/One-Piece-521/2944.html" title="One Piece ">One Piece 521</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 30/10/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/One-Piece-521/2944.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Fate-Zero-5/2939.html" title="FateZero"><img src="http://upload.wikimedia.org/wikipedia/en/6/6e/Fatezero_cover.jpg" alt="Fate/Zero" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Fate-Zero-5/2939.html" title="Fate/Zero ">Fate/Zero 5</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 29/10/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Fate-Zero-5/2939.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Un-Go-3/2933.html" title="un-go"><img src="http://images.mcanime.net/images/anime/12141.jpg" alt="Un-Go" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Un-Go-3/2933.html" title="Un-Go ">Un-Go 3</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 29/10/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Un-Go-3/2933.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Chihayafuru-5/2961.html" title="Chihayafuru"><img src="http://images.mcanime.net/images/anime/10743.jpg" alt="Chihayafuru" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Chihayafuru-5/2961.html" title="Fairy Tail ">Chihayafuru 5</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 01/11/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Chihayafuru-5/2961.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Kimi-to-Boku-5/2957.html" title="Kimi-to-Boku"><img src="http://images.mcanime.net/images/anime/12135.jpg" alt="Kimi to Boku" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Kimi-to-Boku-5/2957.html" title="Kimi to Boku ">Kimi to Boku 5</a></div> <div class="at" style="margin-top:0px"><span>Publicado el: 01/11/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Kimi-to-Boku-5/2957.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="a"><a href="/ver/Mashiro-iro-Symphony-The-Color-of-Lovers-4/2931.html" title="mashiro-iro-symphony-the-color-of-lovers"><img src="http://images.mcanime.net/images/anime/10756.jpg" alt="Mashiro-iro Symphony: The Color of Lovers" width="49" height="71" border="0"></a> <div class="at"><a href="/ver/Mashiro-iro-Symphony-The-Color-of-Lovers-4/2931.html" title="Mashiro-iro Symphony: The Color of Lovers ">Mashiro-iro Symphony... 4</a></div><div class="at" style="margin-top:0px"><span>Publicado el: 29/10/2011</span></div> <div class="ad"></div><iframe src="http://www.facebook.com/plugins/like.php?app_id=121492064600717&amp;href=http://videosanime.net/ver/Mashiro-iro-Symphony-The-Color-of-Lovers-4/2931.html&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" class="tip" style="border:none; overflow:hidden; width:120px; height:21px;displa:block;float:left;margin:3px;margin-top:6px;" allowtransparency="true" original-title="&iquest;Te gusta este capitulo?"></iframe></div><div class="m_b"></div><!-- FIN_NUEVO -->
+<!-- ANI --><h1>Ultimos Agregados:</h1><?php index_anime(); ?></div><div class="m_b"></div>
+<!-- OVA --><div class="m_t"></div><div class="m_m"><h1>Ultimas Ovas Agregadas:</h1><?php index_ova(); ?></div><div class="m_b"></div>
+<!-- PEL --><div class="m_t"></div><div class="m_m"><h1>Ultimas Peliculas Agregadas:</h1><?php index_peli(); ?></div><div class="m_b"></div>
+
+<div class="clear"></div>
+<?php }?></div><div class="clear"></div></td><div class="clear"></div>
+
+<!-- izq -->
+<td valign="top" width="184"><div id="left">
+<!-- 160x600 --><div class="cto">Links de inter&eacute;s</div><div class="cbo"><div class="a160"><iframe allowtransparency="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="160" height="600" src="http://videosanime.net/1.php"></iframe>
+<iframe allowtransparency="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="160" height="600" src="http://videosanime.net/2.php"></iframe>
+</iframe>
+<iframe allowtransparency="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="160" height="600" src="http://videosanime.net/3.php"></iframe></div></div><div class="cfo"></div>
+
+</div></td>
+
+</tr></table>
+<div class="clear"></div><div class="clear"></div><div class="clear"></div></div><div class="clear"></div><div class="clear"></div><div class="clear"></div>
+<!-- footer -->
+<div id="footer"><div id="f_t"></div><div id="x">Ningun video esta alojado en nuestros servidores <?php echo $sitio; ?>  
+	y tampoco reclamamos el contenido mostrado como nuestro </div></div>
+<!-- Histats.com  START (hidden counter) -->
+<a href="http://www.histats.com" alt="contador flash" target="_blank" >
+<img  src="http://sstatic1.histats.com/0.gif?1700456amp;101" alt="contador flash" border="0">
+<!-- Histats.com  END  -->
+</body></html>

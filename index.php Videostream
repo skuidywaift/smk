@@ -1,0 +1,242 @@
+<?php
+function limpia($var){
+	$var = strip_tags($var);
+	$malo = array("\\",";","\'","'",'"','\"');
+	$i=0;$o=count($malo);
+	while($i<=$o){
+		$var = str_replace($malo[$i],"",$var);
+		$i++;
+	}
+	return $var;
+}
+function LimpiarTodo($datos){
+	if(is_array($datos)){
+		$datos = array_map('limpia',$datos);
+	}else{
+		die("<font color=#ff0000><b>Error:</b></font> La funcion <b>LimpiarTodo</b> debe contener un arreglo.");
+	}
+	return $datos;	
+}
+### Seguridad ###
+if($_POST){
+	$_POST =& LimpiarTodo($_POST);
+}
+if($_GET){
+	$_GET =& LimpiarTodo($_GET);
+}
+### Seguridad  ###
+//
+@require_once"Procesos/Configurar.php";
+@require_once"Procesos/Core_Funciones.php";
+//
+/*/////////////////////////////////*/
+$mo=$_GET['m'];
+switch ($mo){
+    case "buscar":
+$busqueda=ucwords(str_replace('+',' ',limpiar_busqueda($_GET['q'])));
+$titulo=ucwords($busqueda)." | ".$titulo;
+        break;
+    case "letra":
+if(strlen($_GET['a'])<2){$letra=$_GET['a'];}else{ redireccionar(); die();}
+$titulo="Anime por letra: ".ucwords($letra)." | ".$titulo;
+        break;
+}
+/*/////////////////////////////////*/
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title><?php echo $titulo; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="La mejor web para ver Anime Online Gratis, mira los &uacuite;ltimos cap&iacute;tulos de los animes del momento sin ninguna clase de restricci&oacute;n | Anime para ver Online y descargar | Naruto Shippuden | Bleach | Dragon Ball Kai | Tokyo Magnitude 8.0 | Onepiece y m&aacute;s."> 
+<meta name="keywords" content="anime online espa&ntilde;ol, anime online gratis, anime online naruto, anime online naruto shippuden, anime online sub espa&ntilde;ol, anime online free, anime online latino, anime online bleach, animeid, anime id, animes, anime, ecchi, anime online, Naruto Shippuden, Anime online, Anime en Descarga Directa, Ver Anime Online.">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name='robots' content='index, follow'> 
+<meta name='googlebot' content='index, follow'>
+<meta name='author' content='<?php echo $sitio; ?>'> 
+<meta name='copyright' content='<?php echo $sitio; ?> <?=date("Y")?> '> 
+<meta name='revisit' content='1 days' /> 
+<meta http-equiv="Content-Language" content="es">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<base href="http://videosanime.net/">
+<link href="Estilo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="Js/jquery-1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.boxgrid.captionfull').hover(function(){
+    $(".cover", this).stop().animate({top:'212px'},{queue:false,duration:160});
+    }, function() {
+    $(".cover", this).stop().animate({top:'212px'},{queue:false,duration:360});
+    });
+    });
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    	$(document).ready(function(){
+		$("dd:not(:first)").hide();
+		$("dt a").click(function(){
+			$("dd:visible").slideUp("slow");
+			$(this).parent().next().slideDown("slow");
+			return false;
+		});
+	});
+	</script> 
+</head>
+<body>
+<div id="container">
+<!-- INICIO HEADER -->
+<div id="supe">Todos los Animes Online | Todos los capitulos solo en <?php echo $sitio; ?></div> 
+<div id="l" class="c" style="width: 1000px; height: 110px"> 
+<a href="/" title="Anime Online" style="float: left;"> 
+<img src="http://i574.photobucket.com/albums/ss183/kotiger09/videosanime-1.png" alt="Anime Online" name="logo" width="990" height="100" border="0" id="logo"></a></div> 
+<div class="menu-nav" style="height: 50px"><div class="index-nav"><ul> 
+<li><a href="/">Inicio</a></li> 
+<li><a href="#" target="_blank" >Pronto</a></li> 
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+<li><a href="#" target="_blank" >Pronto</a></li>
+</ul>
+<!-- INICIO BUSCADOR --> 
+<div style="margin-top:12px">
+<form class="msn" method="get" action="buscador.php"> 
+<input type="text" name="q" value="" id="text">
+<input type="submit" value="Buscar" id="btnBuscar"> 
+</form>
+</div>
+<!-- FIN BUSCADOR -->
+</div></div> 
+<!-- FINAL HEADER -->
+<div id="pub-contenedor"> 
+<div id="pub-1"><div class="publicidad">
+&nbsp;</div></div>
+<div id="pub-2"><div class="publicidad"> 
+&nbsp;</div></div>
+<div id="pub-3"><div class="publicidad"> 
+&nbsp;</div></div>
+</div> 
+<div id="main"> 
+<!-- INICIO ABECEDARIO --> 
+<div align="center"> 
+<div class="paginacion"> 
+<span class="pag"> 
+<a href="letra/1.html">#</a>
+<a href="letra/a.html">A</a>
+<a href="letra/b.html">B</a>
+<a href="letra/c.html">C</a>
+<a href="letra/d.html">D</a>
+<a href="letra/e.html">E</a>
+<a href="letra/f.html">F</a>
+<a href="letra/g.html">G</a>
+<a href="letra/h.html">H</a>
+<a href="letra/i.html">I</a>
+<a href="letra/j.html">J</a>
+<a href="letra/k.html">K</a>
+<a href="letra/l.html">L</a>
+<a href="letra/m.html">M</a>
+<a href="letra/n.html">N</a>
+<a href="letra/o.html">O</a>
+<a href="letra/p.html">P</a>
+<a href="letra/q.html">Q</a>
+<a href="letra/r.html">R</a>
+<a href="letra/s.html">S</a>
+<a href="letra/t.html">T</a>
+<a href="letra/u.html">U</a>
+<a href="letra/v.html">V</a>
+<a href="letra/w.html">W</a>
+<a href="letra/x.html">X</a>
+<a href="letra/y.html">Y</a>
+<a href="letra/z.html">Z</a>
+</span> 
+</div> 
+</div>
+<!-- FIN ABECEDARIO --> 
+<!-- INICIO CUERPO --> 
+<center><table border="0" width="990" cellspacing="0" cellpadding="0"><tr>
+<!-- IZQ -->
+<td width="790" valign="top">
+<?php
+if($mo=="letra"){
+?>
+<div class="items-titulo" style="width: 790px" align="center">Ver Animes con la letra  <?=ucwords($letra)?></div>
+<br>
+<div id="lista-animes"><?php letra_anime($letra); ?></div>
+<?
+}elseif($mo=="buscar"){
+?>
+<div class="items-titulo" style="width: 790px" align="center">Resultados de la Busqueda: <?=$busqueda?></div>
+<div class="contenido">
+<?php
+$_pagi_sql="SELECT nombre,id_capitulo,id_anime,nombre_capitulo FROM animes INNER JOIN capitulos ON animes.id=capitulos.id_anime WHERE MATCH(nombre) AGAINST('".$busqueda."') OR MATCH(nombre_capitulo) AGAINST('".$busqueda."')";
+$_pagi_cuantos = 20;
+$_pagi_nav_num_enlaces = 8;
+//definimos qu&eacute; ir&aacute; en el enlace a la p&aacute;gina anterior
+$_pagi_nav_anterior = "Atras";// podr&iacute;a ir un tag <img> o lo que sea
+//definimos qu&eacute; ir&aacute; en el enlace a la p&aacute;gina siguiente
+$_pagi_nav_siguiente = "Siguiente";// podr&iacute;a ir un tag <img> o lo que sea
+$_pagi_nav_estilo = "current";
+@require"Procesos/paginator.inc.php";
+if(mysql_num_rows($_pagi_result)> 0){
+while($d=mysql_fetch_array($_pagi_result)){
+$numeral++;
+echo "<div class=\"lista-capitulos\" style=\"width:790px\"> 
+<ul id=\"lcd\"style=\"width:790px\"> 
+<li class=\"lc\" style=\"width:790px\"><a href=\"episodio/".$d['id_capitulo']."/".hacer_url($d['nombre'])."_".hacer_url($d['nombre_capitulo']).".html\" class=\"lcc\">".$d['nombre']." - ".$d['nombre_capitulo']."</a></li> 
+</ul> 
+</div>"; 
+} 
+}else { 
+echo "<a href=\"#\">No se encontraron resultados para: ".$busqueda."</a>"; 
+$nohaypag="yes";
+}
+?>
+</div>
+<div class="contenido-abajo"></div>
+<center><div class="pagination"><? if(!$nohaypag){ echo $_pagi_navegacion; } ?></div></center>
+<?
+}else{
+?>
+<div id="column1"></div>
+<div class="items-titulo" style="width: 790px">Nuevos Animes Agregados</div>
+<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=700 HEIGHT=360 SRC="http://videosanime.net/rotador/"></IFRAME> 
+<div id="lista-animes">
+<div>
+<?php index_caratula(); ?>
+</div>
+</div>
+<?php }?>
+</td>
+<!-- DER -->
+<td width="200" valign="top">
+<div class="items-titulo" style="width: 200px" align="center">Lista Completa</div>
+<div id="fb-root"></div><script src="http://connect.facebook.net/es_ES/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/VideosAnime/224291674261338?sk=wall" width="200" show_faces="true" border_color="" stream="false" header="false"></fb:like-box>
+<dt><a href="#">A - F</a></dt>
+<dd><ul class="menu"><?php index_a_f(); ?></ul></dd> 
+<div class="menu-horizontal-abajo"></div>
+<dt><a href="#">G - L</a></dt> 
+<dd style="display: none;"><ul class="menu"><?php index_g_l(); ?></ul></dd> 
+<div class="menu-horizontal-abajo"></div>
+<dt><a href="#">M - R</a></dt> 
+<dd style="display: none;"><ul class="menu"><?php index_m_r(); ?></ul></dd> 
+<div class="menu-horizontal-abajo"></div>
+<dt><a href="#">S - Z</a></dt> 
+<dd style="display: none;"><ul class="menu"><?php index_s_z(); ?></ul></dd> 
+<div class="menu-horizontal-abajo"></div>
+<dt><a href="#">0 - 9</a></dt> 
+<dd style="display: none;"><ul class="menu"><?php index_0_9(); ?></ul></dd> 
+<div class="menu-horizontal-abajo"></div>
+</td>
+<!-- FIN -->
+</tr></table><center>
+<!-- FINAL CUERPO -->
+</div>
+<!-- FINAL --> 
+</div>
+<!-- INICIO FOOTER --> 
+<div id="footer" style="height: 90px">
+	<div id="footer-centro" style="width: 975px; height: 55px"> 
+<strong><?php echo $sitio; ?> © 2011</strong>
+<br> 
+Ningún video está alojado en nuestros servidores, todos son enlaces tomados desde diferentes servidores gratuitos como: Megaupload,, Megavideo, 
+Y muchos más.
+<p><script type="text/javascript" src="http://widgets.amung.us/small.js"></script><script type="text/javascript">WAU_small('g849m99ad16k')</script></div></div> 
+<!-- FINAL FOOTER -->
+</body>
+</html>

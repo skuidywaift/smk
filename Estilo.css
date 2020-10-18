@@ -1,0 +1,1030 @@
+html, body, div, h1, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
+ 
+ 
+body { background:url("http://www.todoanimes.com/img/fondo.gif") fixed center top #fff; color: #fff; font:normal 11px Arial, Verdana, Sans-Serif;color : #121212;margin:0; padding:0;}
+ 
+ 
+ 
+ 
+a {color:#000;text-decoration:none;}
+a:hover {text-decoration :underline;}
+h1, h3, h4, img, form, table, td,input {margin:0; padding:0;}
+h1, h3, h4 {font:bold 11px arial;}
+ul{ list-style:none}
+a img {border:0 none;}
+p {padding:3px 0;margin : 0;line-height:18px; }
+blockquote {margin: 10px 30px;padding:0 0 0 10px;  border-left:3px solid  #d6d6d6;}
+ 
+  
+#supe {
+ 
+	text-align: right;
+	color:#000;
+	font-size: 12px;
+	font-family: verdana;
+	padding:5px 20px 0px 0px; 
+}
+ 
+ 
+ 
+
+ 
+div#container {
+	background: #fff;
+	margin: 0 auto;
+	padding-top: 0px;
+	padding-bottom:15px;
+	position: relative;
+	width: 1000px;
+}
+ 
+ 
+ 
+ 
+ 
+div#footer {
+	background: #f0f0f0;
+	border-top: 6px solid #257ecf;
+	clear: both;
+	color:#000;
+	font-size: 12px;
+	width: auto;
+	height: 150px;
+	padding-top: 10px;
+}
+ 
+ 
+
+div#footer-centro {
+
+	margin: 0 auto;
+	padding-top: 10px;
+	position: relative;
+	width: 975px;
+}
+ 
+ 
+
+
+
+
+
+div#footer a{
+ 
+	color:#fff;
+	text-decoration:none;
+ 
+}
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ /* Listado de imgs */
+ 
+ 
+div.imagelist {
+	padding:1px;
+   	font-size:10px;
+	margin:5px 0 5px 5px;
+	float:left;
+	clear:none;
+}
+ 
+div.imagelist img{
+	border:1px inset #ccc;
+}
+ 
+div.imagelist:hover img{
+ 
+}
+ 
+div.imagelist:hover{
+	color:red; /* Dummy definition to overcome IE bug */
+}
+ 
+.gallery {
+	width:150px;
+	float:left;
+	padding:2px;
+}
+ 
+.picture {
+	float:left;
+	margin-bottom:5px;
+}
+ 
+.title {
+	float:left;
+	width:154px;
+	background-color:#F5F5F5;
+	padding:1px;
+	margin-bottom:5px;
+        border:1px #CCCCCC solid;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+#mm{width:1000px;height:78px;margin-left:auto;margin-right:auto;margin-top:-40px; background-color:#fff}
+#eim{width:19px;height:78px;background-image:url(../menu.png);background-repeat:no-repeat;background-position:top left;float:left}
+ 
+#m{height:78px;width:959px;float:left;background-image:url(../menu.png);background-position:bottom}
+ 
+#edm{width:19px;height:78px;float:left;background-image:url(../menu.png);background-repeat:no-repeat;background-position:top right}
+ 
+ul#uno,ul#dos,ul#i,ul.alfa{list-style:none;margin:0;padding:0;display:block}
+ 
+ul#uno > li,ul#dos > li,ul#i > li{list-style:none;margin:0;padding:0;padding-right:3px;display:block;float:left;height:78px;background-image:url(../d.gif);background-position:right;background-repeat:no-repeat}
+ 
+ 
+  
+ 
+ul.alfa > li{list-style:none;padding:0;display:block;float:left;margin-left:1px;margin-right:2px;margin-top:2px;margin-bottom:1px}
+a.let{-webkit-border-radius:3px;-moz-border-radius:3px;background-color:#EAFAFF;padding-left:8px;padding-right:7px;padding-top:3px;padding-
+
+bottom:0px;font-size:11px;font-family:Verdana;text-shadow:#AEDDFF 0px 1px 0px;text-align:center;font-
+weight:bold;color:#0761B1;display:block;height:17px;width:auto;text-decoration:none;border-right:1px solid #CAF2FF;border-bottom:1px solid #CAF2FF}
+ 
+ 
+.cc{width:482px;height:117px;background-image:url(http://www.todoanimes.com/imagenes/c.jpg);display:block;margin-top:-3px;margin-left:5px;margin-
+right:5px}
+.fleft{float:left}
+.clear{clear:both}
+.ctit{height:25px;text-align:center;color:#E0F7FC;font-weight:bold;font-family:Verdana,Geneva,sans-serif;padding-top:13px;text-shadow:#01a2ff 0px 1px 
+0px}
+.ccon{height:62px;text-align:center;padding-left:20px;padding-right:20px;padding-top:4px}
+#left{width:184px;float:left}
+#mid{float:left;width:554px;padding:2px}
+#right{float:left;width:243px}
+ 
+ 
+ 
+ 
+a.menu{height:44px;display:block;margin-top:7px;color:#000;float:left;font-family:Arial;font-size:9px;height:27px;padding-bottom:0px;padding-left:20px;padding-right:20px;padding-top:17px;text-align:center;text-decoration:none;text-shadow:#fff 0px 1px 0px;text-transform:uppercase;vertical-align:baseline;width:inherit}
+ 
+ 
+ 
+ 
+ul#dos{display:none}
+ 
+#b{padding:0;margin:0;float:right;background-position:top center;height:31px;width:315px;margin-top:13px}
+#q{background-image:url(http://www.vimagen.net/vs/img/input.jpg);border:none 0px;color:#333;float:left;font-family:'Lucida Sans Unicode','Lucida Grande',sans-serif;font-size:12px;height:29px;margin-left:2px;margin-top:0px;outline:none;padding-left:4px;text-shadow:#AEDDFF 0px 1px 0px;width:194px}
+#bb{background-image:url(http://www.vimagen.net/vs/img/but.jpg);background-color:transparent;background-position:left top;border:none;color:#333;float:left;font-size:12px;height:31px;margin-left:3px;margin-top:0px;outline:none;width:51px;cursor:pointer}
+ 
+ 
+ 
+ 
+ 
+#l{width:auto;height:110px; margin-top:auto; padding-top:10px; background-color:#fff;}
+.a728{width:728px;height:90px;float:left; text-align:center; padding-top:10px;}
+.c{margin-left:auto;margin-right:auto}
+#logo{margin-top:-5px;margin-left:8px;margin-right:5px}
+.c{margin-left:auto;margin-right:auto}
+#logo{margin-top:-5px;margin-left:8px;margin-right:5px}
+ 
+ 
+ 
+ 
+ 
+ 
+#doscolumnas {
+    width: 1000px;
+    overflow:hidden;
+    height:auto;
+    padding-top:0px;
+	margin-bottom:20px;
+}
+ 
+#abc {
+    width:400px;
+    background-color:#000;
+    height:100px;
+    float:left;
+	margin-left:100px;
+	
+}
+ 
+#buscador {
+    width:400px;
+    height:100px;
+    background-color:#1f1f1f;
+    float:left;
+}
+ 
+
+ 
+ 
+#main {
+    width: 1000px;
+    overflow:hidden;
+    height:auto;
+    padding-top:20px;
+}
+ 
+#column1 {
+    width:520px;
+    height:auto;
+    float:left;
+    padding-left:20px;
+}
+ 
+#column2 {
+    width:240px;
+    height:auto;
+    float:left;
+}
+ 
+#column3 {
+    width:200px;
+    height:auto;
+    float:left;
+}
+
+#column4 {
+    width:430px;
+    height:auto;
+    float:left;
+    padding-left:20px;
+}
+
+
+#column5 {
+    width:550px;
+    height:auto;
+    float:left;
+}
+
+#column6 {
+    width:740px;
+    height:auto;
+    float:left;
+    margin-left:20px;
+
+}
+
+#column7 {
+    width:240px;
+    height:auto;
+    float:left;
+
+}
+
+
+
+
+
+
+
+#pub-contenedor {
+    width: 1000px;
+    height:auto;
+    padding-left:20px;
+    padding-bottom:20px;
+}
+
+
+#pub-1{
+
+    width:330px;
+    height:auto;
+    float:left;
+}
+
+
+#pub-2{
+
+    width:330px;
+    height:auto;
+    float:left;
+}
+
+
+
+
+#pub-3{
+
+    width:330px;
+    height:auto;
+    float:left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Sinopsis Anime */
+ 
+ 
+.titulo-anime {	color:#0761B1; text-shadow:0px 1px 0px #afafaf; }
+.titulo-anime {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 545px;
+}
+
+
+
+.datos-anime{float:left; padding: 10px 0px 10px 0px; width: 545px; font-size:12px;  font-family: verdana, Arial, sans serif; }
+.datos-anime a{color:#000;}
+.datos-anime img{float:left; margin-right:10px;}
+ 
+ 
+ /* Comentarios */
+
+.titulo-comentarios {	color:#0761B1; text-shadow:0px 1px 0px #afafaf; }
+.titulo-comentarios {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 550px; margin-bottom:10px;}
+
+
+
+ /* Lista de Capítulos */
+
+
+.titulo-capitulos {	color:#0761B1; text-shadow:0px 1px 0px #afafaf; }
+.titulo-capitulos {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 400px;
+}
+
+
+.capitulo-titulo {	color:#0761B1; text-shadow:0px 1px 0px #afafaf; }
+.capitulo-titulo {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 700px; margin-bottom:25px;
+}
+
+.comentario-titulo {	color:#0761B1; text-shadow:0px 1px 0px #afafaf; }
+.comentario-titulo {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 700px; margin-bottom:10px; margin-top:10px;}
+
+
+
+
+
+
+#lcd{width:400px;margin-top:10px;overflow:hidden;position:relative;padding-bottom:10px;list-style:none;padding:0; font-size:12px;}
+.swPage > li.lcc,li.lcc{margin:1px}
+.swPage > li.lcc > a.lcc,a.lcc{background-image:none;background-color:#d9f3ff;padding:7px 7px 7px 7px;overflow:hidden;display:block;font-style:normal;height:18px;-webkit-border-radius:4px;-moz-border-radius:4px;text-decoration:none;color:#1F1F1F;text-shadow:#ffffff 0px 1px 0px;border-right:1px solid #ffffff;border-bottom:1px solid #ffffff;-webkit-transition-duration:0.4s;-webkit-transition-property:background-color color}
+#ftd{width:0px;height:0px}
+.swPage > li.lc > a.lccn,a.lccn{background-image:none;background-color:#FAA3A3;padding:2px 7px 7px 7px;overflow:hidden;display:block;font-style:normal;height:18px;-webkit-border-radius:4px;-moz-border-radius:4px;text-decoration:none;color:#000;text-shadow:rgba(0,0,0,0.1);border-right:1px solid #CE0A0A;border-bottom:1px solid #CE0A0A;-webkit-transition-duration:0.4s;-webkit-transition-property:background-color color}
+.swPage > li.lc > a.lccn:hover,a.lccn:hover{background-color:#F76A6A;color:#000;text-shadow:rgba(0,0,0,0.1);border-right:1px solid #CE0A0A;border-bottom:1px solid #CE0A0A;-webkit-transition-duration:0.4s;-webkit-transition-property:background-color color}
+.swPage > li.lc > a.lcc:hover,a.lcc:hover{background-color:#2482bd;color:#fff;text-shadow:#209FA6 0px 1px 0px;border-right:1px solid #209FA6;border-bottom:1px solid #209FA6;-webkit-transition-duration:0.4s;-webkit-transition-property:background-color color}
+.swPage > li.lc > a.lcc:visited,a.lcc:visited{background-color:#B5FFAA;border-right:1px solid #6BEC46;border-bottom:1px solid #6BEC46;color:#1F1F1F;text-shadow:#32A211 0px 1px 0px}
+.swPage > li.lc > a.lcc:visited:hover,a.lcc:visited:hover{background-color:#6BEC46;color:#1F1F1F;text-shadow:#32A211 0px 1px 0px;border-right:1px solid #83CB3A;border-bottom:1px solid #83CB3A;-webkit-transition-duration:0.4s;-webkit-transition-property:background-color color}
+.clear{clear:both}
+
+
+
+
+
+
+
+
+
+
+
+ 
+ /* Listado de imgs */
+ 
+ 
+.items-titulo {	color:#0086e3; text-shadow:0px 1px 0px #afafaf; }
+.items-titulo {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 500px; margin-bottom:2px}
+ 
+ 
+.items{float:left; padding: 10px 0px 10px 0px; width: 170px;}
+.items a{color:#000;}
+ 
+ #comentarios {    padding-left:50px;}
+.titulo-comentario-capitulo { color:#0086e3; text-shadow:0px 1px 0px #afafaf; }
+.titulo-comentario-capitulo { font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 900px;
+}
+ 
+ 
+ 
+
+
+
+ 
+ 
+ /* Estrenos semanales */
+ 
+.estrenos-titulo  {	color:#0086e3; text-shadow:0px 1px 0px #afafaf; }
+.estrenos-titulo  {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 225px;
+}
+ 
+ 
+.estrenos {background-color:#e9f7ff; height: 80px; color:#7c7c7c; width:220px; padding: 5px 0px 5px 5px; margin-top:10px;}
+.estrenos a{text-decoration: none; color:#1289c4; text-transform: capitalize; font-size: 14px;}
+ 
+ 
+.estrenos .thumb {
+	background-color:#FFFFFF;
+	border: 1px solid #ADADAD;
+	padding: 2px;
+	margin-right:4px;
+}
+ 
+ 
+.estrenos-lista {float:left;}
+.estrenos-lista a {color: #333333;font-family: Verdana;font-size: 10px;text-transform: capitalize;font-weight: normal;}
+ 
+ 
+ 
+ 
+ /* Categorías */
+ 
+ 
+.categorias-titulo  {	color:#0086e3; text-shadow:0px 1px 0px #afafaf; }
+.categorias-titulo  {	font-size:20px; font-family: Helvetica, "Lucida Grande", Arial, sans serif;  border-bottom:1px solid #ddd; width: 190px;
+}
+ 
+ 
+ 
+ 
+#categorias{font-size:13px; background:#f2f2f2; width:190px; height:auto; padding: 10px 0px 10px 0px; margin-top:10px;}
+ 
+ 
+#categorias-pop li {   list-style:none;
+	padding: 4px 2px 6px 20px;
+	background: url(http://www.pasalaweb.com/imagenes/bg_footer_list.gif) repeat-x 0 bottom;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/* menu-nav */
+.menu-nav{width:1000px;height:74px;background-color:#3366CC; margin-bottom:10px;}
+.index-nav{overflow:hidden;margin-left:10px;width:950px;}
+.index-nav a{display:block;float:left;height:40px;line-height:40px;background-position:-223px 0;margin:3px 0 0 -2px;padding:0 20px;color:#86d5fe;font-weight:none;text-decoration:none;font-size:12px; width:auto; text-align:left; text-transform:uppercase;}
+.index-nav a:hover, .index-nav a.hover{color:#fff; text-decoration:none;}
+.index-nav ul li{ display:inline;}
+ 
+ 
+ 
+ 
+.search-nav{height:22px;line-height:22px;padding:4px 0;}
+.search-nav i.people-girl{width:35px;height:30px;float:left;margin-left:20px;margin-top:-3px;display:inline}
+.search-nav span{color:#fff;font-weight:bold;float:right; margin-right:10px;}
+.search-nav .bread-crumbs{color:#044383;font-weight:400;margin:0px;}
+ 
+ 
+.search-nav .search-from{margin-right:20px;display:inline;position:relative}
+.search-nav input{margin:0 5px;}
+.search-nav .search-input{width:181px;height:16px;line-height:16px;padding:3px 0 3px 20px;color:#555;background-position:0 -26px;border:0;float:left;}
+.search-nav .select{float:left;width:74px;height:20px}
+.search-nav select{display:none}
+ 
+.select-type{position:absolute;width:74px;top:0px;left:211px;text-indent:10px;cursor:pointer;z-index:7;}
+.select-div{width:74px;height:21px;background-position:-147px 0;}
+.select-ul {border:1px #888 solid;border-top:none;}
+.select-ul li{height:20px;line-height:20px;border-bottom:1px #e3e3e3 dashed;background:#f1f1f1;width:100%;cursor:pointer}
+ 
+.search-nav .search-submit{width:49px;height:21px;background-position:0 -50px;border:0;float:left;cursor:pointer}
+.search-nav .search-from a{color:#706D1E;font-weight:bold;font-size:12px;}
+.search-nav .search-from a:hover{color:#0b86ce}
+ 
+ 
+
+ 
+ 
+.search{ width:300px;height:30px; margin-right:15px; background:#dbedbf; position:relative;padding:23px 0 10px 10px; float:left;}
+.search_input{ border:1px solid #aaa; height:20px; line-height:20px; width:198px;}
+.search_tit{ width:360px;height:40px; padding:17px 5px 5px 15px; float:left; margin-right:5px; position:relative; background:#f2f2f2;}
+.search_tit a{ margin-right:5px; color:#333; font-size:12px;}
+.r1_left_top{ position:absolute; left:0; top:0;}
+.r1_right_top{ position:absolute; right:0; top:0;}
+.r1_left_down{ position:absolute; left:0; bottom:0;}
+.r1_right_down{ position:absolute; right:0; bottom:0;}
+.top_search_1{ position:absolute; left:0px; top:39px;}
+.top_search_2{ position:absolute; right:0; top:39px;}
+ 
+.vertical{vertical-align:middle;}
+ 
+ 
+ 
+.user_login{width:202px; padding:10px 5px 5px 15px; background:#f4f3f0;float:right; margin-right:32px; position:relative;}
+.login_input{ border:1px solid #e4e3d6; width:85px; height:20px; margin: 0 5px 2px 0;}
+.left{ float:left; padding-right:5px;}
+ 
+  
+ 
+#cuerpos {width:980px; padding:0px 0px 0px 20px;}
+ 
+
+
+#video { padding-left:50px;}
+    	
+
+
+
+#epi_tit {
+	color:#222;
+	text-shadow:0px 1px 0px #fff;
+	height:40px;
+	margin-top:10px;
+    	padding-left:40px;
+}
+.epi_tit {
+	font-size:20px;
+	padding:0px 15px;
+	line-height:40px;
+	width:800px;
+	float:left;
+	border-left:1px solid #ddd;
+	border-right:1px solid #888;
+	background:url(http://sc.cuevana.tv/img/epitit_bg.png) repeat-x;
+	font-family: Helvetica, "Lucida Grande", Arial, sans serif;
+}
+
+.epi_ant, .epi_ant2 {
+	width:40px;
+	height:40px;
+	float:left;
+	border-right:1px solid #888;
+	background-image:url(http://sc.cuevana.tv/img/ar_ant.png);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+.epi_sig, .epi_sig2 {
+	width:40px;
+	height:40px;
+	float:left;
+	border-left:1px solid #ddd;
+	background-image:url(http://sc.cuevana.tv/img/ar_sig.png);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+.epi_sig2, .epi_ant2 {
+	background-position: 0 -40px;
+}
+
+
+
+
+
+
+
+
+
+/* Menu Tabs*/
+
+ 
+ .elcontainer {width: 700px;}
+
+.container{width:700px;padding:0px;}
+ul.tabs{margin:0;padding:0;float:left;list-style:none;height:32px;border-bottom:1px solid #E8E8E8;border-left:1px solid #E8E8E8;width:700px;margin-top:-7px}
+ul.subtabs{margin:0;padding:20;float:right;list-style:none;height:17px;margin-bottom:2px;border-left:1px solid #e8e8e8;margin-left:1px;width:100%}
+ul.tabs li{float:left;margin:0;padding:0;height:31px;line-height:31px;border:1px solid #E8E8E8;border-left:none;margin-bottom:-1px;background:#e0e0e0;overflow:hidden;position:relative;}
+ul.subtabs li{float:left;margin:0;padding:0;height:17px;line-height:17px;border:1px solid #e8e8e8;border-left:none;margin-bottom:-1px;background:#f8f8f8;overflow:hidden;position:relative;}
+ul.tabs li a{text-decoration:none;color:#000;display:block;font-size:13px;padding:0 20px;border:1px solid #f8f8f8;outline:none}
+ul.subtabs li a{text-decoration:none;color:#000;display:block;font-size:11px;padding:0 30px;border:1px solid #f8f8f8;text-shadow:#CCC 0px 1px 0px;outline:none}
+ul.tabs li a:hover{background:#eaeaea;}
+ul.subtabs li a:hover{background:#f8f8f8;text-shadow:none;}
+html ul.tabs li.active,html ul.tabs li.active a:hover{background:#f8f8f8;border-bottom:1px solid #f8f8f8;}
+html ul.subtabs li.active,html ul.subtabs li.active a:hover{background:#FFF;border-bottom:1px solid #f8f8f8;text-shadow:none;}
+.tab_container{border:1px solid #E8E8E8;border-top:none;clear:both;float:left;height:470px;display:block;background:#f8f8f8;-moz-border-radius-bottomright:7px;-khtml-border-radius-bottomright:7px;-webkit-border-bottom-right-radius:7px;-moz-border-radius-bottomleft:7px;-khtml-border-radius-bottomleft:7px;-webkit-border-bottom-left-radius:7px}
+.tab_content{padding:10px;font-size:1.2em;width:680px}
+.tab_content h2{font-weight:normal;padding-bottom:10px;border-bottom:1px dashed #ddd;font-size:1.8em}
+.tab_content h3 a{color:#254588}
+.tab_content img{float:left;margin:0 20px 20px 0;border:1px solid #ddd;padding:5px}
+.c2{position:absolute;top:86px;left:137px;width:300px;height:250px}
+.c1{position:absolute;left:118px;top:0px;width:56px;height:14px}
+
+ 
+ .mtt{color:#0761B1;text-shadow:#AEDDFF 0px 1px 0px; font-size:13px;}
+  .mr{color:#d20000;text-shadow:#ffaeae 0px 1px 0px; font-size:13px;}
+   .mv{color:#329b21;text-shadow:# b9ffae 0px 1px 0px; font-size:13px;}
+
+/* paginator */
+.thispage{
+	margin:0px 3px;
+	font-weight: bold;
+}
+
+.paginator  {
+	text-align:center;
+	font-weight:normal;
+	float:left;
+	text-align:right;
+	color:#444444;
+	font-size:13px;
+	padding:10px 6px;
+	margin:10px 2px;
+}
+.paginator a{
+	color:#444444;
+	border: #DDDDDD 1px solid;
+	background:#FFFFFF none ;
+	margin:1px;
+	padding:1px 3px;
+	text-decoration:none;
+}
+.paginator a:hover {
+	background:#004EB0;
+	color:#FFF;
+	text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+div.imagelist {
+    	font-size:10px;
+	padding:1px;
+	margin:5px 0px 2px 0px;
+	float:left;
+	clear:none;
+}
+
+div.imagelist img{
+	border:1px inset #ccc;
+}
+
+div.imagelist:hover img{
+
+}
+
+div.imagelist:hover{
+	color:red; /* Dummy definition to overcome IE bug */
+}
+
+.gallery {
+	width:160px;
+	float:left;
+	padding:2px;
+}
+
+.picture {
+	float:left;
+	margin-bottom:5px;
+}
+
+.ttt {
+	float:left;
+	width:158px;
+	background-color:#F5F5F5;
+	padding:1px;
+	margin-bottom:5px;
+        border:1px #CCCCCC solid;
+}
+
+
+
+
+
+
+
+
+#ant-sig{width:700px; text-align:center; font-size:18px; font-family:verdana; padding-top:10px; color:#f6f6f6; text-shadow:0px 1px 0px #afafaf; }
+
+.ant{float:left; width:200px;}
+.ant1 a{color:#fff; text-decoration:none; display:block; background-color:#0090e2;  height:38px; padding-top:10px;}
+.ant1 a:hover{color:#fff; text-decoration:none; background-color:#0171b1;}
+
+
+.reg{float:left; width:280px; padding-left:10px; padding-right:10px;}
+.reg1 a{color:#fff; text-decoration:none; display:block; background-color:#6ea003;  height:38px; padding-top:10px;}
+.reg1 a:hover{color:#fff; text-decoration:none; background-color:#608d00;}
+
+
+.sig{float:left; width:200px;}
+.sig1 a{color:#fff; text-decoration:none; display:block; background-color:#0090e2;  height:38px; padding-top:10px;}
+.sig1 a:hover{color:#fff; text-decoration:none; background-color:#0171b1;  }
+
+
+
+
+
+
+
+
+div.paginacion{padding-bottom:20px;}
+div.abcdario{  text-align:center}
+div.paginacion div.datos, div.abcdario div.datos{  display:block;   padding:5px 0}
+div.paginacion span.pag, div.abcdario span.pag{  display:block;   padding:8px 0}
+span.pag a:link, span.pag a:visited, span.pag span.antsig, span.pag span.actual{  display:inline;   text-decoration:none;   width:20px;   color:#717171;   background:#fff url('http://www.todoanimes.com/imagenes/pagb.png');   border:1px solid #b6b6b6;   padding:8px 12px 9px;   margin:0 -1px 0px 0;   white-space:nowrap}span.pag a:hover, span.pag a:active, .abcdario span.pag a:hover, .abcdario span.pag a:active{  border-color:#515151} span.pag span.actual, .abcdario span.pag span.actual{  background:#626262 url('http://www.todoanimes.com/imagenes/pagb2.png');   color:#FFF;   font-weight:bold;   border-color:#202020} span.pag span.antsig, .abcdario span.pag span.antsig{  color:#8F8F8F;   border-color:#9c9c9c}
+
+
+
+
+/* Begin Typography & Colors */
+* { margin: 0; padding: 0; }
+
+input, button, textarea, select {  font: normal 12px/12px "Verdana", sans-serif; color:#2d3538; vertical-align: middle; }
+legend { display: none; }
+fieldset { border: none; }
+
+
+/* Side Right 
+############################################################################################################## */
+.SR { width: 300px; margin-right: 30px; padding-bottom: 30px; float: right;}
+
+/* Search 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.SR .search { background: #fff; right: 0px; padding: 15px; overflow: hidden;}
+/**/ *html .SR .search  { height: 1%;} /**/ 
+.SR .search form { width: 245px; padding: 10px; border: 1px solid #e0e0e0; background: #288ada; }
+.SR .search fieldset { overflow: hidden; height: 1%;  }
+.SR .search input { float: left; margin-right: 2px; background: url(http://designdisease.com/testrun/wp-content/themes/compositio/images/search-input.png) no-repeat; border: none; padding: 5px 3px 5px 65px; width: 145px; color:#666;}
+.SR .search button { float: left; background: url(http://designdisease.com/testrun/wp-content/themes/compositio/images/search-button.png) no-repeat; width: 26px; height: 24px; border: none; cursor: pointer; text-indent: -1000em; }
+.SR .syn ul { margin: 10px 0px;}
+.SR .syn li { background: url(http://designdisease.com/testrun/wp-content/themes/compositio/images/SynIco.png) no-repeat left center; margin: 0px 5px 0px 0px; padding: 3px 0px 3px 15px; list-style-type: none; color:#ffcc66; display: inline; font: bold 14px/14px 'Arial'; letter-spacing: -1px;}
+.SR .syn li a {color:#fff; }
+.SR .syn li a:visited {color:#fff; }
+.SR .syn li a:hover {color:#fff; }
+
+
+#comentarios{     font-size:12px; }
+
+.comentario {
+    font-size:12px;
+    border: 1px solid #9ddbfe;
+    height:auto;
+    background-color:#e9f7ff;
+    padding:10px;
+    margin-top:10px;
+
+}
+
+/*
+ * Autor 	: Anthony A. Vidal Contreras
+ * Correo	: anthony.exe@gmail.com | anthony077_6@hotmail.com	 
+ * Proyecto	: http://www.todoanimes.com
+ */
+/*
+ * MSN style
+ */
+form.msn *{
+	margin: 0;
+	padding: 0;
+}
+form.msn{
+	padding:10px 20px;
+	background-image:url(images/buscador/fondo-azul.png);
+	background-repeat:repeat-x;
+	padding:0 0 3px 20px;
+}
+form.msn input{
+	font-family:MS Shell Dlg;
+	font-size:0.8em;
+	vertical-align:top;
+}
+form.msn input#text{
+	background-color:#fff;
+	width:320px;
+	height:1.6em;
+	border:1px solid #59990e;
+	
+	padding:4px 4px 2px 10px;
+}
+form.msn > input#text{
+	margin:1px 0 0 0;
+}
+form.msn input#btnBuscar{
+	background-color:#61a11c;
+	background-image:url(images/buscador/fondo-boton.png);
+	background-repeat:repeat-x;
+	font-weight:bold;
+	color:#fff;
+	height:2.2em;
+	width:65px;
+	border:1px solid #3f8e00;
+	
+	margin:1px 0 0 6px;
+	padding:0 1px 2px 1px;
+}
+form.msn > input#search{
+	margin:1px 0 0 6px;
+	padding:-2px 1px 0 1px;
+}
+
+form.msn input:hover#search{
+	background-color:#3e8d00;
+	background-image:url(images/buscador/fondo-boton-hover.png);
+}
+
+
+#info{ width:400px;  }
+
+.cto{background-image:url(http://animeid.com/img/ctop.jpg);
+	background-repeat:no-repeat;
+	height:23px;
+	text-align:center;
+	color:#E0F7FC;
+	font-weight:bold;
+	font-family:Arial;
+	padding-top:13px;
+	text-shadow:#01a2ff 0px 1px 0px;
+	font-size:11px;
+	text-transform:uppercase}
+
+.cbo{background-image:url(http://animeid.com/img/cbo.jpg);
+	background-repeat:repeat-y;
+	padding:5px 10px 0px 10px}
+
+.cfo{background-image:url(http://animeid.com/img/cfo.jpg);
+	height:13px;
+	background-repeat:no-repeat}
+	
+.item{ 
+	width: 191px;
+	height: 277px;
+	background: url(imagenes/item.gif);
+	float:left;
+	margin-right:5px;
+	margin-bottom:5px;}
+
+.boxgrid{ 
+	width: 166px;
+	height: 250px;
+	*height: 240px; 
+	margin:12px;
+	*padding:12px;
+	*margin:0px; 
+	float:left; 
+	overflow: hidden; 
+	position: relative;}
+
+.boxgrid h1{ 
+	color:#FFFFFF;
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:11px;
+	text-align:center;}
+
+.boxgrid img{ border: 0px solid #000;}
+.boxcaption{
+	position: absolute;
+	background: #000;
+	height: 38px;
+	width: 100%;
+	*width: 144px;
+	*margin-left:12px;
+	*padding:12px;
+	opacity: .8;
+	/* For IE 5-7 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+		/* For IE 8 */
+	-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";}
+
+.captionfull .boxcaption {
+	top: 212px;
+	left: 0px;}
+
+#buscador {
+	background-image: url(imagenes/buscador.gif);
+	background-repeat:no-repeat;
+	width: 295px;
+	height: 26px;
+	margin:0px;
+	padding:0px;
+	margin-left:100px;
+	margin-top:10px;
+	float:left;}
+	
+#q {
+	margin-top: 5px;
+	margin-left: 7px;
+	border-color: #3366CC;
+	border-width: 0px;
+	height: 16px;
+	width: 180px;
+	font-family: Helvetica, Arial, Sans-serif;
+	color: #3366CC;
+	font-size: 12px;
+	text-align: left;
+	display:block;
+	float: left;
+	padding-left: 7px;}
+
+#input_boton {
+	background-color: transparent;
+	border-color: #3366CC;
+	border-width: 0px;
+	height: 26px;
+	width: 82px;
+	display:block;
+	float: left;
+	margin-left: 10px;
+	cursor: pointer;}
+
+dl,dd { margin: 0; }
+	dt {
+	background:url(imagenes/menu-horizontal-arriba.gif);
+	background-repeat:no-repeat;
+	width:188px;
+	height:20px;
+	padding-top:10px;
+	color: #FFF;
+	font-family: Verdana;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;}
+	dt a { color: #FFF; display:block; text-decoration:none; font-size: 12px; text-align:center; font-weight:bold; font-family:Verdana;}
+	dd a { color: #000; }
+
+.menu-horizontal-arriba {
+	background:url(imagenes/menu-horizontal-arriba.gif);
+	width:200px;
+	height:30px;}
+
+.menu-horizontal-abajo {
+	background:url(imagenes/menu-horizontal-abajo.gif);
+	width:200px;
+	height:9px;
+	background-repeat:no-repeat;}
+
+.menu {
+width:200px;
+list-style:none;
+margin:0;
+padding:0 ;}
+
+.menu li {
+height:23px;
+display:block;
+margin:0;
+padding:0;}
+
+.menu li a {
+text-align:left;
+height:23px;
+font:11px Verdana;
+color:#313131;
+display:block;
+background:url('imagenes/menu-text.gif') 0 0 no-repeat;
+text-decoration:none;
+padding:0 5px 0 6px ;}
+
+.menu li a:hover {
+color:#ff0000;}
+
+.menu li a span {
+line-height:23px;
+text-align:center;}
+
+/*
+Plugin Name: WP-Digg Style Paginator
+Plugin URI: http://www.mis-algoritmos.com/2007/09/09/wp-digg-style-pagination-plugin-v-10/
+Author: Victor De la Rocha
+Author URI: http://www.mis-algoritmos.com
+*/
+/*Pagination*/
+div.pagination {
+	text-align:center;
+	padding: 7px;
+	margin: 3px;}
+
+div.pagination a {
+	padding: 1px 4px 1px 4px; 
+	margin: 2px;
+	border: 1px solid #000000;
+	text-decoration: none; /* no underline */
+	color: #000000;}
+
+div.pagination a:hover, div.pagination a:active {
+	border: 1px solid #000000;
+	background-color:#000000;
+	color: #fff;}
+
+div.pagination span.current {
+	padding: 2px 5px 2px 5px;
+	margin: 2px; 
+	border: 1px solid #000000;
+	font-weight: bold;
+	background-color: #000000;
+	color: #FFF;} 
+
+div.pagination span.disabled {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #EEE;
+	color: #DDD;}
